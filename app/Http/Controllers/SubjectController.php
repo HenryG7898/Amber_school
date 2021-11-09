@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
-    public function view(){
+    public function show(){
         return view('admin-view.editsubject');
     }
 

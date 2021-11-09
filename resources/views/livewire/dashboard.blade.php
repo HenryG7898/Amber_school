@@ -1,18 +1,19 @@
-<div class="mx-auto">
+<div x-data="isOpen = false" class="mx-auto">
 
     <div class="text-center">
         <div class="my-7"></div>
         <div class=" w-1/4 text-white rounded bg-black hover:bg-green-500 hover:text-black flex flex-col p-6 justify-center items-center shadow-md my-5 rounded m-auto">
 
             <div class="text-2xl text-center text-black   font-bold">
-                <h1 class="text-white text-5xl font-bold"> Student List</h1>
+                <button @click="isOpen = false" class="text-white text-5xl font-bold"> Student List</button>
             </div>
 
         </div>
     </div>
 
-    <div class=" ">
-        <div class=" ">
+    <div @click.away="isOpen = true" class="relative ">
+
+        <div x-show="isOpen" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95"  >
             <table class="w-full border-collapse block md:table">
                 <thead class="bg-black rounded-full">
                 <tr>
