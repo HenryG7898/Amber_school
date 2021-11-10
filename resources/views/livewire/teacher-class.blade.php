@@ -18,9 +18,9 @@
                         </div>
                     @endif
                     <div class="">
-                        <h2 class="text-3xl font-bold mb-10 text-gray-800 text-center">Add a Teacher</h2>
+                        <h2 class="text-3xl font-bold mb-10 text-gray-800 text-center">Class & Schedule</h2>
 
-                        <form class="space-y-5 space-x-5" wire:submit.prevent="newteacher">
+                        <form class="space-y-5 space-x-5" wire:submit.prevent="classschedule">
                             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                                 <div>
                                     <label class="block mb-1 font-bold text-gray-500">Class Name</label>
@@ -29,8 +29,10 @@
                                 </div>
                                 <div>
                                     <label class="block mb-1 font-bold text-gray-500">Teacher Name</label>
-                                    <select wire:model="teacher_nm" id="" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
-                                      @foreach($teacher as $teachers)
+                                    <select wire:model="teacher_id" id="" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
+                                        <option value="">No Teacher</option>
+                                        @foreach($teacher as $teachers)
+
                                           @if ($teachers->user_type === 'Teacher')
                                                 <option value="{{ $teachers->id }}">{{ $teachers->first_nm.' '.$teachers->last_nm }}</option>
 {{--                                            @else--}}
@@ -43,7 +45,7 @@
                                         @endforeach
 
                                     </select>
-                                    @error('Teacher_nm') <span class="error text-red-600">{{ $message }}</span> @enderror
+                                    @error('Teacher_id') <span class="error text-red-600">{{ $message }}</span> @enderror
                                 </div>
                                 <div>
                                     <label class="block mb-1 font-bold text-gray-500">Start Time</label>
@@ -59,6 +61,7 @@
                                 <div>
                                     <label class="block mb-1 font-bold text-gray-500">Subject Name</label>
                                     <select wire:model="subject_id" id="" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
+                                        <option value="">Select a Subject For You Class</option>
                                         @foreach($subject as $subjects)
                                                 <option value="{{ $subjects->id }}">{{ $subjects->subject_nm}}</option>
                                                 {{--                                            @else--}}

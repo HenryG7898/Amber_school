@@ -35,3 +35,7 @@ Route::view('classschedule', 'admin-view.schedule');
 
 
 Route::view('login', 'admin-view.sgin');
+
+
+Route::view('student','student-view.studentdasboard');
+Route::view('teacher','teacher-view.teacherindex');
