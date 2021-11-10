@@ -23,34 +23,54 @@
                         <form class="space-y-5 space-x-5" wire:submit.prevent="newteacher">
                             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                                 <div>
-                                    <label class="block mb-1 font-bold text-gray-500">First Name</label>
-                                    <input type="text" wire:model="first_nm" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
-                                    @error('first_nm') <span class="error text-red-600">{{ $message }}</span> @enderror
+                                    <label class="block mb-1 font-bold text-gray-500">Class Name</label>
+                                    <input type="text" wire:model="class_nm" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
+                                    @error('class_nm') <span class="error text-red-600">{{ $message }}</span> @enderror
                                 </div>
                                 <div>
-                                    <label class="block mb-1 font-bold text-gray-500">Last Name</label>
-                                    <input type="text" wire:model="last_nm" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
-                                    @error('last_nm') <span class="error text-red-600">{{ $message }}</span> @enderror
-                                </div>
-                                <div>
-                                    <label class="block mb-1 font-bold text-gray-500">Date of Birth</label>
-                                    <input type="date" wire:model="DOB" class="w-full border-2 border-gray-200 p-2.5 rounded outline-none focus:border-purple-500">
-                                    @error('DOB') <span class="error text-red-600">{{ $message }}</span> @enderror
-                                </div>
-                                <div>
-                                    <label class="block mb-1 font-bold text-gray-500">Gender</label>
-                                    <select wire:model="gender" id="gender" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
-                                        <option value=""></option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
+                                    <label class="block mb-1 font-bold text-gray-500">Teacher Name</label>
+                                    <select wire:model="teacher_nm" id="" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
+                                      @foreach($teacher as $teachers)
+                                          @if ($teachers->user_type === 'Teacher')
+                                                <option value="{{ $teachers->id }}">{{ $teachers->first_nm.' '.$teachers->last_nm }}</option>
+{{--                                            @else--}}
+{{--                                                <option value="{{ $teachers->id }}">No Teacher Available</option>--}}
+                                            @else
+
+
+                                            <option value="{{ $teachers->id }}">No Teacher Available</option>
+                                          @endif
+                                        @endforeach
+
                                     </select>
-                                    @error('gender') <span class="error text-red-600">{{ $message }}</span> @enderror
+                                    @error('Teacher_nm') <span class="error text-red-600">{{ $message }}</span> @enderror
                                 </div>
                                 <div>
-                                    <label class="block mb-1 font-bold text-gray-500">Email</label>
-                                    <input type="email" wire:model="email" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
-                                    @error('email') <span class="error text-red-600">{{ $message }}</span> @enderror
+                                    <label class="block mb-1 font-bold text-gray-500">Start Time</label>
+                                    <input type="datetime-local" wire:model="start_time" class="w-full border-2 border-gray-200 p-2.5 rounded outline-none focus:border-purple-500">
+                                    @error('start_time') <span class="error text-red-600">{{ $message }}</span> @enderror
                                 </div>
+                                <div>
+                                    <label class="block mb-1 font-bold text-gray-500">End Time</label>
+                                    <input type="datetime-local" wire:model="end_time" class="w-full border-2 border-gray-200 p-2.5 rounded outline-none focus:border-purple-500">
+
+                                    @error('end_time') <span class="error text-red-600">{{ $message }}</span> @enderror
+                                </div>
+                                <div>
+                                    <label class="block mb-1 font-bold text-gray-500">Subject Name</label>
+                                    <select wire:model="subject_id" id="" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
+                                        @foreach($subject as $subjects)
+                                                <option value="{{ $subjects->id }}">{{ $subjects->subject_nm}}</option>
+                                                {{--                                            @else--}}
+                                                {{--                                                <option value="{{ $teachers->id }}">No Teacher Available</option>--}}
+                                        @endforeach
+                                            {{--                                            @else--}}
+                                            {{--                                                <option value="{{ $teachers->id }}">No Teacher Available</option>--}}
+                                    </select>
+
+                                    @error('subject_id') <span class="error text-red-600">{{ $message }}</span> @enderror
+                                </div>
+
 
                                 {{--                            <div>--}}
                                 {{--                                <label class="block mb-1 font-bold text-gray-500">Password</label>--}}

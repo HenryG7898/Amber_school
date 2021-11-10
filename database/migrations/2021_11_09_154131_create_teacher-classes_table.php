@@ -17,11 +17,7 @@ class CreateTeacherClassesTable extends Migration
             $table->id();
             $table->foreignId('student_id')->constrained('users','id');
             $table->foreignId('subject_id')->constrained('subjects','id');
-            $table->string('class_nm');
-            $table->time('start_time');
-            $table->time('end_time');
-            $table->date('start_date');
-            $table->date('end_date');
+
 
             $table->timestamps();
         });

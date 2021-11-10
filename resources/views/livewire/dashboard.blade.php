@@ -1,6 +1,6 @@
 <div x-data="isOpen = false" class="mx-auto">
 
-    <div class="text-center">
+    <div class="my-10 -mb-2.5 text-center">
         <div class="my-7"></div>
         <div class=" w-1/4 text-white rounded bg-black hover:bg-green-500 hover:text-black flex flex-col p-6 justify-center items-center shadow-md my-5 rounded m-auto">
 
@@ -56,7 +56,7 @@
     </div>
 
 
-    <div class="text-center">
+    <div class="my-20 -mb-2.5 text-center">
         <div class="my-7"></div>
         <div class=" w-1/4 text-white rounded bg-black hover:bg-green-500 hover:text-black flex flex-col p-6 justify-center items-center  shadow-md my-5 rounded m-auto">
 
@@ -105,8 +105,8 @@
         </div>
     </div>
 
-    <div class="text-center">
-        <div class="my-7"></div>
+    <div class="my-20 -mb-2.5 text-center">
+
         <div class=" w-1/4 text-white rounded bg-black hover:bg-green-500 hover:text-black flex flex-col p-6 justify-center items-center shadow-md my-5 rounded m-auto">
 
             <div class="text-2xl text-center text-black   font-bold">
@@ -116,7 +116,7 @@
         </div>
     </div>
 
-    <div class=" ">
+    <div class="">
         <div class=" ">
             <table class="w-full border-collapse block md:table">
                 <thead class="bg-black rounded-full">

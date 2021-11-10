@@ -30,7 +30,8 @@ Route::view('dashboard', 'admin-view.dashboard');
 Route::view('addstudent', 'admin-view.newstudent');
 Route::view('addteacher', 'admin-view.newteacher');
 Route::view('addsubject', 'admin-view.newsubject');
-Route::view('addteacher', 'admin-view.assignteacher');
+Route::view('addclass', 'admin-view.assignteacher');
+Route::view('classschedule', 'admin-view.schedule');
 
 
 Route::view('login', 'admin-view.sgin');
