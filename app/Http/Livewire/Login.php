@@ -22,18 +22,20 @@ class Login extends Component
         if(Auth::attempt([
             'email' => $this->email,
             'password' => $this->password
-
-        ])){
-
-            session()->flash('message','Logged in successfully');
-            return redirect('dashboard');
-
-        }else{
-
-            session()->flash('error','Login failed');
-
+        ])) {
+            if (Auth::user()->user_type == 'admin') {
+                session()->flash('message', 'Logged in successfully');
+                return redirect('dashboard');
+            } elseif (Auth::user()->user_type == 'teacher') {
+                session()->flash('message', 'Logged in successfully');
+                return redirect('teacher/dashboard');
+            } elseif (Auth::user()->user_type == 'student') {
+                session()->flash('message', 'Logged in successfully');
+                return redirect('student/dashboard');
+            } else {
+                session()->flash('error', 'Login failed');
+            }
         }
-
     }
 
     public function logout(Request $request){

@@ -38,8 +38,8 @@ class Addteacher extends Component
             'DOB'  => $this->DOB,
             'gender'  => $this->gender,
             'email' => $this->email,
-            'user_type' => 'Teacher',
-            'password' => 'Teacher1234',
+            'user_type' => 'teacher',
+            'password' => hash::make('Teacher1234'),
         ]);
 
         session()->flash('success', 'Teacher Added');

@@ -33,14 +33,14 @@
                                         <option value="">No Teacher</option>
                                         @foreach($teacher as $teachers)
 
-                                          @if ($teachers->user_type === 'Teacher')
+                                          @if ($teachers->user_type === 'teacher')
                                                 <option value="{{ $teachers->id }}">{{ $teachers->first_nm.' '.$teachers->last_nm }}</option>
 {{--                                            @else--}}
 {{--                                                <option value="{{ $teachers->id }}">No Teacher Available</option>--}}
-                                            @else
+{{--                                            @else--}}
 
 
-                                            <option value="{{ $teachers->id }}">No Teacher Available</option>
+{{--                                            <option value="{{ $teachers->id }}">No Teacher Available</option>--}}
                                           @endif
                                         @endforeach
 

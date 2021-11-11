@@ -25,4 +25,8 @@ class Class_schedule extends Model
     public function subject(){
         return $this->belongsTo(Subject::class);
     }
+
+    public function classroom(){
+        return $this->hasMany(Class_schedule::class);
+    }
 }

@@ -5,7 +5,7 @@
             class="relative z-30 p-5 text-2xl text-white bg-black bg-opacity-50 rounded-xl" style="margin-top: -1%"
         >
             <div class="text-center">
-                <h1 class="text-white text-6xl font-bold">Welcome To Henry's Academy</h1>
+                <h1 class="text-white text-6xl font-bold">Welcome To Amber School</h1>
 
             </div>
         </div>

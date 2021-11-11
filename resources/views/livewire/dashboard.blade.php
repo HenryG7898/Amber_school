@@ -83,7 +83,7 @@
                 </tr>
                 </thead>
                 @foreach($user as $users)
-                    @if ($users->user_type === 'Teacher')
+                    @if ($users->user_type === 'teacher')
                         <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
                             <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">{{ $users->first_nm }}</td>
                             <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">{{ $users->last_nm }}</td>
